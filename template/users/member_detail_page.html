@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+<div class="col-sm-4">
+<div class="profile-page-info">
+  <img src="{% static 'images/profile-background-3.PNG' %}" alt="">
+  <div class="profile-box">
+    {% if member.member_profile_pic %}
+    <img src="{{ member.member_profile_pic.url }}" style="width:100px;height:100px; alt="">
+    {% else %}
+    <img src="{% static 'images/login-avatar.PNG' %}" alt="">
+    {% endif %}
+    <div class="profile-details">
+      <h1>{{ member.email }}</h1>
+      <br>
+      <p><i class="far fa-user"></i> Username: {{ member.user.username }}</p>
+      <p><i class="far fa-envelope"></i> Email ID: {{ member.email }}</p>
+      <a href="{% url 'users:member_update' pk=user.pk %}"><p  class="btn btn-primary">Edit profile</p></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+      
+</div>
+
+<!--
+<div class="row">
+  <div class="col-md-3">
+    {% if member.member_profile_pic %}
+      <img src="{{ member.member_profile_pic.url }}" style="width:100px;height:100px;">
+    {% else %}
+      <img src="" alt="">
+    {% endif %}
+  </div>
+  <div class="col-md-9">
+    <h1>{{ member.user.username }}</h1>
+    <br>
+    <p>Name: {{ member.name }}</p>
+    <p>Email: {{ member.email }}</p>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <p><a class="btn btn-primary" href="{% url 'users:member_update' pk=user.pk %}">Edit profile</a></p>
+      </div>
+      
+    </div>
+</div>
+-->
+{% endblock %}

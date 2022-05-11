@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="col-lg-6 offset-3">
+        <div class="box">
+    {% if registered %}
+	<h4>Registered Successfully</h4>
+	<a href="{% url 'users:login' %}">You can now login>
+    {% else %}
+    <h4>Member Registration form</h4>
+    
+
+    <form method="post">
+      {% csrf_token %}
+
+      
+     <p> <label for="">{{ member_profile_form.email.label_tag }}</label>{{ member_profile_form.email }}</p>
+
+
+      {{ user_form.non_field_errors }}
+
+      <p> <label for="">{{ user_form.username.label_tag }}</label>{{ user_form.username }}</p>
+      <p> {{ user_form.username.help_text }}</p>
+      <p> <label for="">{{ user_form.password1.label_tag }}</label>{{ user_form.password1 }}</p>
+      <p> {{ user_form.password1.help_text }} </p>
+      <p> <label for="">{{ user_form.password2.label_tag }}</label>{{ user_form.password2 }}</p>
+      <p> {{ user_form.password2.help_text }} </p>
+      <div>
+  <button type="submit" value="Submit" > Register </button>
+</div>
+    </form>
+	
+    <a href="{% url 'users:login' %}">Already have an account.</a>
+	
+	
+
+    {% endif %}
+  </div>
+</div>
+
+
+
+{% endblock %}
