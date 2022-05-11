@@ -87,7 +87,7 @@
 
 
           <li> <a href="{% url 'users:member_detail' pk=user.pk %}">Profile</a> </li>
-      <li> <a href="{% url '#' %}">Raise Alert</a></li>
+      <li> <a href="#">Raise Alert</a></li>
 	  
       
      
