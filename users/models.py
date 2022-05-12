@@ -12,7 +12,7 @@ class User(AbstractUser):
 
 class Member(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True,related_name='Member')
-    username = None
+    #username = None
     email = models.EmailField(max_length=20, blank=False,
                               error_messages={
                                   'unique': "A user with that email already exists.",
