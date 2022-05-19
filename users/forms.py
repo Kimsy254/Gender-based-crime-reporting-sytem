@@ -9,15 +9,7 @@ class UserForm(UserCreationForm):
         model = User
         fields = ['username','password1','password2']
         widgets = {
-                'username': forms.TextInput(attrs={'class':'answer'}),
-                'password1': forms.PasswordInput(attrs={'class':'answer'}),
-                'password2': forms.PasswordInput(attrs={'class':'answer'}),
-                }
-        
-## Member Registration Form 
-class MemberProfileForm(forms.ModelForm):
-    class Meta():
-        model =  Member
+                '
         fields = ['email']
         widgets = {
                 'email': forms.EmailInput(attrs={'class':'answer'}),
