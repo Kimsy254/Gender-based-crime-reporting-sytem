@@ -17,7 +17,7 @@ class UserForm(UserCreationForm):
 ## Member Registration Form 
 class MemberProfileForm(forms.ModelForm):
     class Meta():
-        
+        model =  Member
         fields = ['email']
         widgets = {
                 'email': forms.EmailInput(attrs={'class':'answer'}),
